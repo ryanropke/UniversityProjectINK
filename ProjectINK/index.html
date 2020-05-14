@@ -1,0 +1,190 @@
+<!doctype html><!--HTML5 doctype declaration -->
+<html lang="en"><!--default language of the document content -->
+	
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--character encoding for the document (Unicode) -->
+		<title>Home Page</title><!--web page title -->
+		<link rel="icon" type="image/ico" href="Images/favicon.jpeg">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/tnormalize.css" rel="stylesheet ">
+		<link href="css/tstylesheet.css" rel="stylesheet /">
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt&display=swap" rel="stylesheet">
+		
+	<!--	<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-82838bb8-a226-4279-82f4-6265e0be0278"></div> -->
+	</head>
+
+<body>
+      <a href="https://rr335.brighton.domains/projectink/index.html">
+        <img src="Images/pink.png" alt="Logo"  class="center" class="banner-fluid" />
+        </a>
+    
+<!--Markup all web page content inside the 'body' tags -->
+	<div id="wrapper">
+	<!--The 'wrapper' contains all the page content-->
+	
+    <header><!--The main heading for the page -->
+  
+	</header>
+	<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a href="tdesigns.html">Tattoo Designs</a>
+    <a href="canvaspage.html">Canvas</a>
+    <a href="faq.html">FAQs</a>
+    <a href="tattooist.html">Find Your Tattooist</a>
+<a href="tandc.html">Terms & Conditions</a>
+<a href="contact.html">Contact Us</a>
+  </div>
+
+</div>
+
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+<script>
+var mybutton = document.getElementById("myBtn");
+window.onscroll = function() {scrollFunction()};
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
+
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<div class="header11">
+<span onclick="openNav()"><img src="Images/menu.png" class= "navmenu" alt="menu" style="width:30px;height:30px;"
+    ></span> <h2>Home</h2></div>
+    
+	
+<script>
+    /* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>	
+	
+	
+	
+	
+	 <main><!--The main page content -->
+        
+        
+    
+
+
+
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <img src="Images/template.png" style="width:100%" >
+</div>
+
+<div class="mySlides fade">
+  <img src="Images/slide2.png" style="width:100%">
+</div>
+
+<div class="mySlides fade">
+  <img src="Images/slide3.png" style="width:100%">
+</div>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div>
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+        
+        <h3>Check Out Our Socials:</h3>
+        <div class="responsivetd">
+  <div class="gallerytd">
+      <a href="https://www.instagram.com/project__ink/">
+      <img src="Images/insta.png" alt="insta" width="200" height="200">
+      </a>
+</div>
+</div>
+		
+	<div class="responsivetd">
+  <div class="gallerytd">
+      <a href="https://twitter.com/project__ink">
+      <img src="Images/twitter.png" alt="twitter" width="200" height="200">
+      </a>
+</div>	
+</div>
+		
+		<div class="responsivetd">
+  <div class="gallerytd">
+      <a href="https://www.facebook.com/Project__INK-110428760599035/">
+      <img src="Images/facebook.png" alt="facebook" width="200" height="200">
+      </a>
+</div>
+</div>
+
+<div class="responsivetd">
+  <div class="gallerytd">
+      <a href="https://www.linkedin.com/in/ryan-ropke-b500261a3">
+      <img src="Images/Lin.png" alt="Lin" width="200" height="200">
+      </a>
+  <br/>
+  <br/>
+</div>
+</div>
+        
+        
+           
+    </main><!--Close main page content --> 
+        
+    
+          
+ 
+  
+	<footer><!--Footer content -->
+		<small>&copy; Ry Ropke, University of Brighton, 2020.</small>
+		<br/>
+		<br/>
+	</footer>
+
+	</div><!--Close 'wrapper' div -->
+</body><!--Close 'body' -->
+</html><!--Close 'html' -->

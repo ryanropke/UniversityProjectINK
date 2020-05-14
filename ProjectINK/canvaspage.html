@@ -1,0 +1,170 @@
+<!doctype html><!--HTML5 doctype declaration -->
+<html lang="en"><!--default language of the document content -->
+	
+    <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<!--character encoding for the document (Unicode) -->
+		<title>Canvas Page</title><!--web page title -->
+		<link rel="icon" type="image/ico" href="Images/favicon.jpeg">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/tnormalize.css" rel="stylesheet">
+		<link href="css/tstylesheet.css" rel="stylesheet /">
+		<link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Rock+Salt&display=swap" rel="stylesheet">
+	</head>
+
+<body onload="InitThis();">
+    <a href="https://rr335.brighton.domains/projectink/index.html">
+        <img src="Images/pink.png" alt="Logo"  class="center" class="banner-fluid" />
+        </a>
+<!--Markup all web page content inside the 'body' tags -->
+	<div id="wrapper">
+	<!--The 'wrapper' contains all the page content-->
+	
+    <header><!--The main heading for the page -->
+		
+	</header>
+	
+    	<!-- The overlay -->
+<div id="myNav" class="overlay">
+
+  <!-- Button to close the overlay navigation -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Overlay content -->
+  <div class="overlay-content">
+    <a href="index.html">Home</a>
+    <a href="tdesigns.html">Tattoo Designs</a>
+    <a href="canvaspage.html">Canvas</a>
+    <a href="faq.html">FAQs</a>
+    <a href="tattooist.html">Find Your Tattooist</a>
+<a href="tandc.html">Terms & Conditions</a>
+<a href="contact.html">Contact Us</a>
+  </div>
+
+</div>
+
+<!-- Use any element to open/show the overlay navigation menu -->
+<div class="header11">
+<span onclick="openNav()"><img src="Images/menu.png" class="navmenu" alt="menu" style="width:30px;height:30px;"
+    ></span> <h2>The Canvas</h2></div>
+	
+<script>
+    /* Open when someone clicks on the span element */
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+/* Close when someone clicks on the "x" symbol inside the overlay */
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
+    
+    <main><!--The main page content -->
+        
+        	
+	
+    	<article>
+			
+			<h3>A place to design your own tattoos (Right click to save)</h3>
+        
+		</article>
+		<!--https://www.codicode.com/art/how_to_draw_on_a_html5_canvas_with_a_mouse.aspx -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="JsCode.js"></script>
+    <div align="center">
+        
+        <!-- Code for canvas -->
+        <canvas id="myCanvas" width="350%" height="400"></canvas>
+        <br /><br />
+        <button onclick="javascript:clearArea();return false;">Clear Area</button>
+        <br /><br />
+       <input type="file">
+       <br /><br />
+        Choose Your Size: <select id="selWidth">
+            <option value="1">1</option>
+            <option value="3" selected="selected">2</option>
+            <option value="5">3</option>
+            <option value="7">4</option>
+            <option value="9">5</option>
+            <option value="11">6</option>
+        </select>
+        Choose Your Colour: <select id="selColor">
+            <option value="black">Black</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+             <option value="gray">Grey</option>
+            <option value="red" selected="selected">Red</option>
+            <option value="yellow">Yellow</option>
+        </select>
+    </div>
+    <script>
+        var mousePressed = false;
+var lastX, lastY;
+var ctx;
+
+function InitThis() {
+    ctx = document.getElementById('myCanvas').getContext("2d");
+
+    $('#myCanvas').mousedown(function (e) {
+        mousePressed = true;
+        Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, false);
+    });
+
+    $('#myCanvas').mousemove(function (e) {
+        if (mousePressed) {
+            Draw(e.pageX - $(this).offset().left, e.pageY - $(this).offset().top, true);
+        }
+    });
+
+    $('#myCanvas').mouseup(function (e) {
+        mousePressed = false;
+    });
+	    $('#myCanvas').mouseleave(function (e) {
+        mousePressed = false;
+    });
+}
+
+function Draw(x, y, isDown) {
+    if (isDown) {
+        ctx.beginPath();
+        ctx.strokeStyle = $('#selColor').val();
+        ctx.lineWidth = $('#selWidth').val();
+        ctx.lineJoin = "round";
+        ctx.moveTo(lastX, lastY);
+        ctx.lineTo(x, y);
+        ctx.closePath();
+        ctx.stroke();
+    }
+    lastX = x; lastY = y;
+}
+	
+function clearArea() {
+    // Use the identity matrix while clearing the canvas
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+}
+
+    </script>
+	
+		
+    </main><!--Close main page content --> 
+
+
+ 
+  
+	<footer><!--Footer content -->
+<br/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<a href="https://www.instagram.com/project__ink/" class="fa fa-instagram"></a>
+<a href="https://twitter.com/project__ink" class="fa fa-twitter"></a>
+<a href="https://www.facebook.com/Project__INK-110428760599035/" class="fa fa-facebook"></a>
+<a href="https://www.linkedin.com/in/ryan-ropke-b500261a3" class="fa fa-linkedin"></a>
+
+		<small>&copy; Ry Ropke, University of Brighton, 2020.</small>
+		<br/>
+		<br/>
+	</footer>
+
+	</div><!--Close 'wrapper' div -->
+</body><!--Close 'body' -->
+</html><!--Close 'html' -->
